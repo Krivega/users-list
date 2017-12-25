@@ -1,0 +1,12 @@
+@import 'sass/style';
+
+.tabs-navigation {
+	&__tabs {
+		position: relative;
+		max-width: $maxWidthContent;
+		margin: 0 auto !important;
+		.md-tab--inactive {
+			color: get-color('disabled', $md-light-theme);
+		}
+	}
+}

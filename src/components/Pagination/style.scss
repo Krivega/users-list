@@ -1,0 +1,9 @@
+@import 'sass/style';
+
+.pagination {
+	display: flex;
+
+	&__next {
+		margin-left: auto;
+	}
+}

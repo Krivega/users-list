@@ -1,0 +1,31 @@
+@import 'sass/style';
+
+.fade-translate {
+  &-enter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.01;
+
+    &.fade-translate-enter-active {
+      z-index: 1;
+      transition: opacity 500ms ease-in;
+      opacity: 1;
+    }
+  }
+
+  &-exit {
+    opacity: 1;
+
+    &.fade-translate-exit-active {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      transition: opacity 500ms ease-in;
+      opacity: 0.01;
+    }
+  }
+}

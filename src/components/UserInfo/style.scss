@@ -1,0 +1,108 @@
+@import 'sass/style';
+$user-info-image-column: (
+	desktop: 7,
+	tablet: 8,
+	phone: 4
+);
+$user-info-info-column: (
+	desktop: 5,
+	tablet: 8,
+	phone: 4
+);
+.user-info {
+	display: flex;
+	&__image {
+		position: relative;
+		z-index: 3;
+		display: flex;
+		overflow: hidden;
+		flex-shrink: 0;
+		height: 440px;
+
+		@include media-query(mobile) {
+			border-top-left-radius: $border-radius;
+			border-top-right-radius: $border-radius;
+		}
+		@include media-query(desktop) {
+			border-top-left-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+
+			align-self: center;
+		}
+		@include md-box-shadow(3);
+
+		@each $size in map-keys($user-info-image-column) {
+			@include media-query($size) {
+				$basis: 100/12 * map-get($user-info-image-column, $size);
+
+				flex-grow: map-get($user-info-image-column, $size);
+
+				flex-basis: #{$basis}#{%};
+			}
+		}
+		&:hover {
+			.user-info__image__edit {
+				opacity: 1;
+			}
+		}
+		&__edit {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 3;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: transition(opacity);
+			opacity: 0;
+			background-color: rgba($md-light-theme-background-color, 0.8);
+
+			will-change: opacity;
+		}
+	}
+
+	&__info {
+		overflow: hidden;
+		flex-shrink: 0;
+		background-color: #fff;
+
+		@include md-box-shadow(1);
+		@include media-query(mobile) {
+			padding: 16px;
+			border-bottom-right-radius: $border-radius;
+			border-bottom-left-radius: $border-radius;
+
+			align-self: flex-start;
+		}
+		@include media-query(desktop) {
+			margin: 16px 0;
+			padding: 32px;
+			border-top-right-radius: $border-radius;
+			border-bottom-right-radius: $border-radius;
+
+			align-self: center;
+		}
+
+		@each $size in map-keys($user-info-info-column) {
+			@include media-query($size) {
+				$basis: 100/12 * map-get($user-info-info-column, $size);
+
+				flex-grow: map-get($user-info-info-column, $size);
+
+				flex-basis: #{$basis}#{%};
+			}
+		}
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		height: 40px;
+		margin: 0;
+		color: get-color('text', $md-light-theme);
+
+		@extend %md-headline;
+	}
+}

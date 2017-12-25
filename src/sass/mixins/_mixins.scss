@@ -1,0 +1,7 @@
+// Useful mixins
+
+@import 'elements/responsive';
+
+@function transition($property) {
+	@return #{$property} 180ms cubic-bezier(.4, 0, .2, 1);
+}

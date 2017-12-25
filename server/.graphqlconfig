@@ -1,0 +1,14 @@
+{
+	"schemaPath":"schema.graphql",
+	"extensions":{
+		"endpoints":{
+			"default": {
+				"url": "https://api.graph.cool/simple/v1/cjbgj3dmt0isc0193qgbrmdzj"
+			}
+		},
+		"load": {
+			"json" : "users.json",
+			"mutation": "createUser"
+		}
+	}
+}

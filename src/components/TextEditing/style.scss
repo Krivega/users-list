@@ -1,0 +1,14 @@
+@import 'sass/style';
+
+.text-editing {
+	&__inline-btn.md-btn {
+		width: $md-font-icon-size;
+		height: $md-font-icon-size;
+		padding: 0;
+
+		@media #{$md-desktop-media} {
+			width: $md-font-icon-dense-size;
+			height: $md-font-icon-dense-size;
+		}
+	}
+}

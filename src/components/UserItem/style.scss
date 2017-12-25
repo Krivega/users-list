@@ -1,0 +1,22 @@
+@import 'sass/style';
+
+.user-item {
+	display: block;
+	&__image {
+		display: flex;
+		overflow: hidden;
+		min-height: 190px;
+	}
+	.md-card {
+		overflow: hidden;
+		border-radius: $border-radius;
+	}
+	&,
+	&:visited {
+		text-decoration: none;
+	}
+
+	&:hover * {
+		color: $md-primary-color;
+	}
+}

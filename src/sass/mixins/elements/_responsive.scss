@@ -1,0 +1,17 @@
+@import './responsive-utils';
+
+@mixin media-query($size) {
+  @if $size == mobile {
+    @include -media-query-(phone, $layout-grid-breakpoints) {
+      @content;
+    }
+
+    @include -media-query-(tablet, $layout-grid-breakpoints) {
+      @content;
+    }
+  } @else {
+    @include -media-query-($size, $layout-grid-breakpoints) {
+      @content;
+    }
+  }
+}

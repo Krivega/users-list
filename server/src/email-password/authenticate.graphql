@@ -1,0 +1,8 @@
+type AuthenticateAdminPayload {
+	id: ID!
+	token: String!
+}
+
+extend type Mutation {
+	authenticateAdmin(email: String!, password: String!): AuthenticateAdminPayload
+}

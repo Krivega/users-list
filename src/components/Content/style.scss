@@ -1,0 +1,25 @@
+@import 'sass/style';
+
+.content {
+	box-sizing: content-box;
+	max-width: $maxWidthContent;
+	margin: 0 auto;
+
+	@include media-query(mobile) {
+		padding: 16px;
+	}
+	@include media-query(desktop) {
+		padding: 32px;
+	}
+
+	&__body {
+		position: relative;
+
+		@include media-query(mobile) {
+			min-height: calc(100vh - #{$md-tab-icon-height + 32px});
+		}
+		@include media-query(desktop) {
+			min-height: calc(100vh - #{$md-tab-icon-height + 64px});
+		}
+	}
+}

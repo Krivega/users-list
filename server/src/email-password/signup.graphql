@@ -1,0 +1,8 @@
+type SignupAdminPayload {
+	id: ID!
+	token: String!
+}
+
+extend type Mutation {
+	signupAdmin(email: String!, password: String!): SignupAdminPayload
+}
