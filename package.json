@@ -1,8 +1,12 @@
 {
   "name": "users-list",
-  "description": "Implementation of an Users List in the infrastructure of react-graphql",
   "version": "0.1.0",
-  "keywords": ["reactjs", "graphql", "react-apollo"],
+  "description": "Implementation of an Users List in the infrastructure of react-graphql",
+  "keywords": [
+    "graphql",
+    "react-apollo",
+    "reactjs"
+  ],
   "contributors": [
     {
       "name": "Krivega Dmitriy",
@@ -10,13 +14,18 @@
       "web": "http://krivega.com/"
     }
   ],
-  "demos": ["http://krivega.com/lab/users-list"],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/Krivega/users-list.git"
-    }
-  ],
+  "scripts": {
+    "build": "npm-run-all build-css build-js",
+    "build-css": "node-sass-chokidar src/ -o src/ --include-path=src/ --include-path=node_modules/",
+    "build-js": "cross-env NODE_PATH=src react-scripts build",
+    "precommit": "lint-staged",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "cross-env NODE_PATH=src react-scripts start",
+    "test": "cross-env NODE_PATH=src react-scripts test --env=jsdom",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --include-path=src/ --include-path=node_modules/ --watch --recursive"
+  },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.4",
     "apollo-client": "^2.1.0",
@@ -43,23 +52,22 @@
     "react-scripts": "1.0.17",
     "react-transition-group": "^2.2.1"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --write", "git add"]
-  },
-  "scripts": {
-    "precommit": "lint-staged",
-    "build-css": "node-sass-chokidar src/ -o src/ --include-path=src/ --include-path=node_modules/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --include-path=src/ --include-path=node_modules/ --watch --recursive",
-    "start-js": "cross-env NODE_PATH=src react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "cross-env NODE_PATH=src react-scripts build",
-    "build": "npm-run-all build-css build-js",
-    "flow": "flow",
-    "test": "cross-env NODE_PATH=src react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
   "devDependencies": {
     "why-did-you-update": "^0.1.0"
-  }
+  },
+  "demos": [
+    "http://users-list.krivega.com"
+  ],
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/Krivega/users-list.git"
+    }
+  ]
 }

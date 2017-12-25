@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://krivega.com/lab/users-list"><img src="https://github.com/Krivega/users-list/raw/master/public/logo.png" alt="Users List" width="200"></a>
+  <a href="http://users-list.krivega.com/" target="_blank"><img src="https://github.com/Krivega/users-list/raw/master/public/logo.png" alt="Users List" width="200"></a>
   <br>
   Users List
   <br>
