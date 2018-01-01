@@ -8,11 +8,8 @@ import { testUpdatesComponents } from 'developerTools';
 if (process.env.NODE_ENV !== 'production') {
   testUpdatesComponents(React);
 }
-const rootEl = document.getElementById('root');
 
-if (rootEl && rootEl.offsetWidth) {
-  console.log(rootEl.offsetWidth);
-}
+const rootEl = document.getElementById('root');
 
 if (rootEl) {
   render(<Root />, rootEl);
