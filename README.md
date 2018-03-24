@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://krivega.github.io/users-list" target="_blank"><img src="https://github.com/Krivega/users-list/raw/master/public/logo.png" alt="Users List" width="200"></a>
+  <a href="http://users-list.krivega.com/" target="_blank"><img src="https://github.com/Krivega/users-list/raw/master/public/logo.png" alt="Users List" width="200"></a>
   <br>
   Users List
   <br>
@@ -8,7 +8,7 @@
 
 <h4 align="center">Implementation of an Users List in the infrastructure of react-graphql.</h4>
 
-### [Demo](https://krivega.github.io/users-list)
+### [Demo](http://users-list.krivega.com/)
 
 ## How To Use
 
